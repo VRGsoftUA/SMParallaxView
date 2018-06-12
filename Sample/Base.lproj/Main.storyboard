@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N8h-oG-Zbo">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="FAS-4P-O1x">
+            <objects>
+                <viewController id="N8h-oG-Zbo" customClass="SMViewController" customModule="SMParallaxView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jAL-cf-miD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L2w-8D-4Ah">
+                                <rect key="frame" x="0.0" y="208.5" width="375" height="250"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="L2w-8D-4Ah" secondAttribute="height" multiplier="1.5:1" id="qST-XG-xcJ"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rEW-G0-183">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SMCollectionViewCell" id="HBN-Rd-dwI" customClass="SMCollectionViewCell" customModule="SMParallaxView" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Prb-pL-fq5" customClass="SMParallaxMultiView" customModule="SMParallaxView" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Prb-pL-fq5" firstAttribute="leading" secondItem="HBN-Rd-dwI" secondAttribute="leading" id="2Cc-IE-7Yh"/>
+                                            <constraint firstItem="Prb-pL-fq5" firstAttribute="top" secondItem="HBN-Rd-dwI" secondAttribute="top" id="OMP-gp-kmr"/>
+                                            <constraint firstAttribute="bottom" secondItem="Prb-pL-fq5" secondAttribute="bottom" id="lp2-0J-uIp"/>
+                                            <constraint firstAttribute="trailing" secondItem="Prb-pL-fq5" secondAttribute="trailing" id="uz3-Oi-JwL"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="paralaxView" destination="Prb-pL-fq5" id="1s0-EM-8o5"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="N8h-oG-Zbo" id="smE-3p-hFe"/>
+                                    <outlet property="delegate" destination="N8h-oG-Zbo" id="V4d-7e-wnk"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cnh-Qw-pn6">
+                                <rect key="frame" x="137" y="623" width="101" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="More...">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bhm-fp-mBY" kind="presentation" id="pkB-H5-5ag"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Cnh-Qw-pn6" firstAttribute="centerX" secondItem="jAL-cf-miD" secondAttribute="centerX" id="ABe-gC-oGJ"/>
+                            <constraint firstItem="d2d-uW-2cp" firstAttribute="bottom" secondItem="Cnh-Qw-pn6" secondAttribute="bottom" constant="20" id="Hka-JL-Dyj"/>
+                            <constraint firstItem="L2w-8D-4Ah" firstAttribute="trailing" secondItem="d2d-uW-2cp" secondAttribute="trailing" id="Tuz-Ku-X16"/>
+                            <constraint firstItem="L2w-8D-4Ah" firstAttribute="centerY" secondItem="jAL-cf-miD" secondAttribute="centerY" id="i7D-x1-sYc"/>
+                            <constraint firstItem="L2w-8D-4Ah" firstAttribute="leading" secondItem="d2d-uW-2cp" secondAttribute="leading" id="iM8-gq-VXA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d2d-uW-2cp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FGw-XA-8kr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84" y="132.68365817091455"/>
+        </scene>
+        <!--More View Controller-->
+        <scene sceneID="wvE-5A-YNW">
+            <objects>
+                <viewController id="bhm-fp-mBY" customClass="SMMoreViewController" customModule="SMParallaxView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S9q-7a-iHw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntD-pG-F7M">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lw5-po-gpg" customClass="SMParallaxMultiView" customModule="SMParallaxView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="536.5" height="954"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lw5-po-gpg" firstAttribute="width" secondItem="ntD-pG-F7M" secondAttribute="width" multiplier="1.43:1" id="HQr-ye-NuL"/>
+                                    <constraint firstAttribute="bottom" secondItem="lw5-po-gpg" secondAttribute="bottom" id="LrO-u0-DbL"/>
+                                    <constraint firstItem="lw5-po-gpg" firstAttribute="height" secondItem="ntD-pG-F7M" secondAttribute="height" multiplier="1.43:1" id="T2d-dK-YaO"/>
+                                    <constraint firstItem="lw5-po-gpg" firstAttribute="leading" secondItem="ntD-pG-F7M" secondAttribute="leading" id="XsV-1e-fgd"/>
+                                    <constraint firstAttribute="trailing" secondItem="lw5-po-gpg" secondAttribute="trailing" id="fnb-E9-6DC"/>
+                                    <constraint firstItem="lw5-po-gpg" firstAttribute="top" secondItem="ntD-pG-F7M" secondAttribute="top" id="gcF-iL-VxI"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8O-N1-ajn">
+                                <rect key="frame" x="146" y="623" width="84" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="back" destination="bhm-fp-mBY" eventType="touchUpInside" id="b36-xb-jyB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ntD-pG-F7M" firstAttribute="trailing" secondItem="M2s-am-DLv" secondAttribute="trailing" id="8F5-5o-68A"/>
+                            <constraint firstItem="ntD-pG-F7M" firstAttribute="top" secondItem="S9q-7a-iHw" secondAttribute="top" id="GIx-bV-I5p"/>
+                            <constraint firstItem="k8O-N1-ajn" firstAttribute="centerX" secondItem="S9q-7a-iHw" secondAttribute="centerX" id="KzX-gn-lab"/>
+                            <constraint firstItem="ntD-pG-F7M" firstAttribute="leading" secondItem="M2s-am-DLv" secondAttribute="leading" id="Mgy-Hu-iKL"/>
+                            <constraint firstItem="M2s-am-DLv" firstAttribute="bottom" secondItem="k8O-N1-ajn" secondAttribute="bottom" constant="20" id="YeG-eD-Wuw"/>
+                            <constraint firstItem="ntD-pG-F7M" firstAttribute="bottom" secondItem="M2s-am-DLv" secondAttribute="bottom" id="w4s-VD-zFj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="M2s-am-DLv"/>
+                    </view>
+                    <connections>
+                        <outlet property="paralaxView" destination="lw5-po-gpg" id="Ugf-NR-Uc4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c4b-JT-wtx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="773.16341829085468" y="132"/>
+        </scene>
+    </scenes>
+</document>
